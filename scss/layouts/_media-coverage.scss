@@ -1,0 +1,136 @@
+.media-coverage {
+    --gap: 1em;
+    --gap-2: calc(var(--gap) * 2);
+    --gap-3: calc(var(--gap) * 3);
+    --gap-5: calc(var(--gap) * 5);
+
+    section {
+        justify-content: start;
+    }
+
+    .tabs {
+        font-size: clamp(2.2rem, 6vw, var(--fs-9));
+        font-weight: 200;
+
+        @media (max-width: 480px) {
+            width: min-content;
+        }
+
+        span {
+            color: var(--grey-translucent);
+            cursor: pointer;
+            white-space: nowrap;
+
+            &:hover {
+                color: var(--accent-clr) !important;
+            }
+
+            &.active {
+                color: black;
+            }
+        }
+    }
+
+    .tabs-content-container {
+        position: relative;
+        margin-top: var(--gap-5);
+
+        .tab-content {
+            position: absolute;
+            inset: 0;
+            visibility: hidden;
+            opacity: 0;
+            transition-duration: .3s;
+            transition-timing-function: var(--easing-1);
+            transition-property: opacity;
+
+            &.active {
+                transition-duration: .5s;
+                position: relative;
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+
+    .row {
+        display: grid;
+        // grid-template-columns: minmax(40vw, 1fr) max-content max-content;
+        // grid-template-columns: minmax(40vw, 1fr) 1fr 1fr;
+        grid-template-columns: 3fr 1fr auto;
+        grid-template-areas: "pub date button"
+            "headline date button";
+        place-items: center start;
+        gap: 0 var(--gap-3);
+        margin-bottom: var(--gap-2);
+        padding-bottom: var(--gap-2);
+        border-bottom: 1px solid var(--grey-translucent);
+
+        @media (max-width: 980px) {
+            grid-template-areas: "pub"
+                "headline"
+                "date"
+                "button";
+            grid-template-columns: 1fr;
+            gap: var(--gap) 0;
+            margin-bottom: var(--gap-3);
+            padding-bottom: var(--gap-3);
+        }
+
+        .pub {
+            grid-area: pub;
+            font-size: var(--fs-5);
+            font-weight: 700;
+            line-height: 1.5;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding-bottom: 0;
+        }
+
+        .headline {
+            grid-area: headline;
+            font-size: var(--fs-4);
+            font-weight: 400;
+            line-height: 1.7;
+
+            @media (max-width: 980px) {
+                padding-bottom: 0;
+            }
+        }
+
+        .date {
+            grid-area: date;
+            justify-self: center;
+            width: max-content;
+            color: var(--grey-translucent-2);
+            font-size: var(--fs-5);
+            font-weight: 700;
+            line-height: 1.5x;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+            @media (max-width: 980px) {
+                justify-self: start;
+            }
+        }
+
+        .button {
+            grid-area: button;
+            justify-self: end;
+
+            @media (max-width: 980px) {
+                justify-self: start;
+
+            }
+
+            &.hidden {
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+            }
+        }
+
+    }
+}
+
+// @import '../components/paginator';

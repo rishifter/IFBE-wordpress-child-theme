@@ -1,0 +1,107 @@
+.home-hero {
+    // top: var(--header-height);
+    max-height: 100vh;
+    overflow: hidden;
+    min-height: 100vh;
+    background-color: black;
+    background-image: url("https://manishajewellers.com/ifbe/wp-content/uploads/2022/07/home-background.jpg");
+    // background-image: url("https://manishajewellers.com/ifbe/wp-content/uploads/2022/07/home-background.gif"),
+    //     url("https://manishajewellers.com/ifbe/wp-content/uploads/2022/07/home-background.jpg");
+    background-size: cover;
+
+    &::after {
+        content: "";
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        position: absolute;
+    }
+
+    .et_pb_row {
+        display: flex;
+        height: 100vh;
+        // background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+
+        .et_pb_column {
+            display: grid;
+            place-content: end center;
+            padding-bottom: 5%;
+
+            @media (max-width:768px) {
+                // align-content: center;
+                padding-bottom: 20%;
+            }
+        }
+    }
+
+    .et_pb_module {
+        &.et_pb_image {
+            // overflow: hidden;
+            position: absolute;
+            inset: -50px 0 0 0;
+            // background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        img {
+            --delay: 5s;
+            --slide-width: 150%;
+            filter: brightness(0.3);
+            background-blend-mode: multiply;
+
+            // position: absolute;
+            // inset: -5px 0;
+            max-width: var(--slide-width);
+            width: var(--slide-width);
+            height: 100%;
+            // animation: 5s slide ease-in-out forwards infinite;
+            // transition: var(--transition);
+            opacity: 0;
+        }
+
+        &:nth-child(1) img {
+            // animation-delay: 0s;
+            // z-index: 3;
+            // outline: 2px solid red;
+        }
+
+        &:nth-child(2) img {
+            // animation-delay: calc(var(--delay) * 2);
+            // z-index: 2;
+            // outline: 2px solid green;
+        }
+
+        &:nth-child(3) img {
+            // animation-delay: calc(var(--delay) * 3);
+            // z-index: 1;
+            // outline: 2px solid blue;
+        }
+    }
+
+    .text {
+        font-weight: 200;
+        font-size: var(--fs-8);
+        font-size: clamp(var(--fs-7), 4vw, var(--fs-8));
+        line-height: 1.4em;
+        letter-spacing: 1px;
+        color: white;
+        text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.35);
+        // max-width: 80vw;
+        // min-width: 80vw;
+        padding-inline: var(--padding-container);
+        justify-self: center;
+
+        .wrapper {
+            /* display: flex;*/
+            min-width: 80%;
+            display: block;
+
+            p:first-child {
+                padding-bottom: 0.3em;
+            }
+        }
+
+        // #cursor {
+        //     margin: 0;
+        //     display: inline-block;
+        // }
+    }
+}

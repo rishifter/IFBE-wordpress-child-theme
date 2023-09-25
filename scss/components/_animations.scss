@@ -1,0 +1,31 @@
+// @keyframes slide1 {
+//     0% {}
+
+//     33% {
+//         transform: translateX(-100%);
+//     }
+// }
+
+// @keyframes slide-back-and-forth {
+
+//     0%,
+//     100% {
+//         background-position-x: 0%;
+//     }
+
+//     50% {
+//         background-position-x: 100%;
+//     }
+// }
+
+@keyframes slide-back-and-forth {
+
+    0%,
+    100% {
+        transform: translateX(0vw);
+    }
+
+    50% {
+        transform: translateX(calc(var(--slide-offset) * -1));
+    }
+}

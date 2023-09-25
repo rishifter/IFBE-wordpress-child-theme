@@ -1,0 +1,209 @@
+.wpcf7 {
+    // padding-inline: var(--gap);
+
+    input[type=text],
+    input[type=tel],
+    input[type=number],
+    input[type=email],
+    input[type=date],
+    input[type=url],
+    textarea {
+        font-size: var(--fs-3);
+        font-weight: 700;
+        color: black;
+        letter-spacing: 1px;
+        line-height: 1.7;
+        width: 100%;
+        padding: 1.5em 0;
+        border: none;
+        border-bottom: 2px solid var(--grey);
+        border-radius: 0;
+        background-color: transparent;
+        text-transform: uppercase;
+
+        &::placeholder {
+            color: var(--grey-3);
+        }
+
+        &:focus {
+            border-bottom-color: var(--accent-clr);
+            // color: var(--accent-clr);
+        }
+    }
+
+    textarea {
+        height: 5em;
+    }
+
+    .wpcf7-checkbox {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
+        gap: var(--gap);
+
+        .wpcf7-list-item {
+            margin: 0;
+
+            label {
+                display: grid;
+
+                & > * {
+                    grid-column: 1;
+                    grid-row: 1;
+                }
+
+                &:hover,
+                &:focus-within {
+                    outline: 1px solid var(--accent-clr);
+                    // outline-offset: 3px;
+                    border-radius: 4px;
+                }
+
+                input[type="checkbox"] {
+                    opacity: 0;
+
+                    &:focus ~ span,
+                    &:hover {
+                        // outline: 1px solid var(--accent-clr);
+                        // outline-offset: 3px;
+                    }
+
+                    &:checked + .wpcf7-list-item-label {
+                        background-color: var(--accent-clr);
+                        color: white;
+                        transition-duration: 0.2s;
+                        transition-timing-function: var(--easing-1);
+                        transition-property: background-color, color;
+                    }
+                }
+
+                .wpcf7-list-item-label {
+                    font-size: var(--fs-3);
+                    font-weight: 700;
+                    line-height: 1.7;
+                    letter-spacing: 1px;
+                    background-color: var(--grey-2);
+                    border-radius: 4px;
+                    padding: 1.8em 2em;
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+    }
+
+    .row {
+        display: flex;
+        gap: var(--gap-2);
+        margin-block: var(--gap-2);
+
+        & > span {
+            flex-basis: 50%;
+        }
+
+        @media (max-width: 480px) {
+            flex-direction: column;
+        }
+    }
+
+    .wrap {
+        flex-wrap: wrap;
+
+        > span {
+            flex-basis: 100%;
+        }
+
+    }
+
+    .message {
+        text-align: center;
+        color: var(--accent-clr);
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: var(--fs-4);
+    }
+
+    .wpcf7-response-output {
+        text-align: center;
+    }
+
+    .wpcf7-not-valid-tip {
+        font-size: var(--fs-3);
+    }
+
+    /* Submit button with spinner container */
+    .wpcf7-form > p {
+        display: flex;
+        flex-direction: column;
+        margin-top: var(--gap-3);
+
+        input[type=submit] {
+            border-width: 0;
+            font-size: var(--fs-5);
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: 0.08em;
+        }
+
+        .wpcf7-spinner {
+            align-self: center;
+        }
+    }
+
+    /* File Upload button */
+    input[type=file]::file-selector-button {
+        // opacity: 0;
+    }
+
+    .file-upload {
+        --icon-size: 66px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--gap-2);
+        position: relative;
+
+        input[type="file"] {
+            opacity: 0;
+            width: var(--icon-size);
+            height: var(--icon-size);
+        }
+
+        .wpcf7-form-control-wrap::before {
+            content: url("./images/file-upload.jpg");
+            position: absolute;
+            inset: 0;
+        }
+
+        .wpcf7-not-valid-tip {
+            position: absolute;
+            top: 100%;
+            width: max-content;
+        }
+
+        .desc {
+            font-size: var(--fs-3);
+            max-width: 40vw;
+
+            h3 {
+                font-weight: 700;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                font-size: inherit;
+            }
+
+            h4 {
+                font-weight: 400;
+                padding-bottom: 0;
+                font-size: inherit;
+            }
+
+            span {
+                color: var(--accent-clr);
+            }
+        }
+
+        #file-name {
+            font-style: italic;
+        }
+    }
+}

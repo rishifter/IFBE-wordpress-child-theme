@@ -1,0 +1,18 @@
+/* hide MEC event tabs for repeating, hourly, location, links, organiser, cost, seo  on edit event page */
+.mec-add-event-tabs-link:nth-child(n+2) {
+    display: none !important;
+}
+
+.mec-form-row.mec-all-day-event ~ .mec-form-row,
+.mec-form-row.mec-all-day-event ~ h4 {
+    display: none !important;
+}
+
+/* Remove links from MEC events menu in sidebar */
+/* tags, labels locations, organisers */
+a[href*="edit-tags.php?taxonomy=post_tag&post_type=mec-events"],
+a[href*="edit-tags.php?taxonomy=mec_label&post_type=mec-events"],
+a[href*="edit-tags.php?taxonomy=mec_location&post_type=mec-events"],
+a[href*="edit-tags.php?taxonomy=mec_organizer&post_type=mec-events"] {
+    display: none !important;
+}

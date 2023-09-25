@@ -1,0 +1,26 @@
+.press {
+    section {
+        // justify-content: start;
+        min-height: 40vh !important;
+    }
+
+    .row {
+        display: flex;
+        gap: var(--gap-5) calc(var(--gap-5) + 2em);
+        flex-wrap: wrap;
+        margin-top: var(--gap-5);
+
+    }
+
+    .title {
+        // margin-bottom: 0.4em;
+    }
+
+    a {
+        color: var(--accent-clr);
+
+        &:hover {
+            color: var(--accent-clr-translucent);
+        }
+    }
+}

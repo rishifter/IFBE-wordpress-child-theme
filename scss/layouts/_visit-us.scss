@@ -1,0 +1,97 @@
+.visit-us {
+    .title-container {
+        .title {
+            font-size: clamp(1.7rem, 8vw, var(--fs-8));
+            margin-bottom: 0.2em;
+            text-transform: capitalize;
+        }
+    }
+
+    .row {
+        font-size: var(--fs-5);
+        font-weight: 400;
+        // line-height: 1.375;
+        line-height: 1.62;
+
+        @media (max-width: 768px) {
+            gap: var(--gap-3);
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: var(--gap-3);
+        }
+
+        &.contact {
+            div {
+                // width: max-content;
+            }
+        }
+
+        .opening-times,
+        .contact,
+        .info-left,
+        .info-right {
+            @media (min-width: 767px) {
+                width: 50%;
+            }
+
+        }
+
+        h4,
+        strong {
+            font-weight: 700;
+        }
+
+        h4 {
+            @media (min-width: 480px) {
+
+                width: max-content;
+            }
+        }
+
+        a {
+            color: black;
+
+            &:hover {
+                color: var(--accent-clr);
+            }
+        }
+    }
+
+    .map {
+        iframe {
+            width: 100%;
+            filter: grayscale(1);
+        }
+    }
+
+    .info {
+        h4 {
+            font-size: var(--fs-6-5);
+            font-weight: 600;
+            line-height: 1.36;
+            color: var(--accent-clr);
+            margin-bottom: var(--gap);
+            // text-transform: uppercase;
+        }
+
+        p {
+            &:not(:last-of-type) {
+                padding-bottom: var(--gap-2);
+            }
+
+            strong {
+                font-size: var(--fs-4);
+                font-weight: 700;
+                line-height: 1.57;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .phone,
+    .email {
+        width: max-content;
+    }
+}

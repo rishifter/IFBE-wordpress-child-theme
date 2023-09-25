@@ -1,0 +1,89 @@
+/* UTILITIES */
+.flex {
+    display: flex;
+
+    @media(max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.flex-sb {
+    justify-content: space-between;
+}
+
+.flex-aic {
+    align-items: center;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flex-col-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-jc-top {
+    justify-content: start;
+}
+
+.highlight {
+    color: var(--accent-clr);
+}
+
+.center {
+    text-align: center;
+
+    &.center-left-on-mobile {
+        @media (max-width:768px) {
+            text-align: left;
+        }
+    }
+}
+
+.disabled > a {
+    pointer-events: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.grey-bg {
+    background-color: var(--grey-2);
+}
+
+.grey-shadow-horizontal {
+    box-shadow: 0 0 0 100vw var(--grey-2);
+    clip-path: inset(0px -100vw);
+}
+
+.gap-1 {
+    gap: var(--gap);
+}
+
+.gap-2 {
+    gap: var(--gap-2);
+}
+
+.gap-3 {
+    gap: var(--gap-3);
+}
+
+.gap-4 {
+    gap: var(--gap-4);
+}
+
+.gap-5 {
+    gap: var(--gap-5);
+}
+
+.tt-none,
+.tt-none > *{
+    text-transform: none;
+}

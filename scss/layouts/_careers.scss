@@ -1,0 +1,145 @@
+// Careers page
+.careers-main {
+    section.flex-col {
+        justify-content: start;
+        min-height: auto;
+
+        .title {
+            margin-bottom: 0.3em;
+        }
+
+        article {
+            margin-top: var(--gap-5);
+
+            @media (max-width: 980px) {
+                margin-top: var(--gap-2)
+            }
+        }
+    }
+
+    .row {
+        --gap: 1rem;
+        display: grid;
+        // grid-template-columns: minmax(40vw, 1fr) max-content max-content;
+        grid-template-columns: 1fr auto;
+        grid-template-areas: "title date button""subtitle date button";
+        place-items: center start;
+        gap: 0 var(--gap-3);
+        margin-bottom: var(--gap);
+        background-color: var(--grey-2);
+        padding: 20px 38px;
+        isolation: isolate; //fix for button circle hiding because of z-index -1
+
+        @media (max-width: 980px) {
+            grid-template-areas: "title""subtitle""date""button";
+            gap: var(--gap) 0;
+            margin-bottom: var(--gap-3);
+            // padding-bottom: var(--gap-3);
+            padding: 20px 20px 38px;
+        }
+
+        .job-title {
+            grid-area: title;
+            font-size: var(--fs-5);
+            font-weight: 700;
+            line-height: 1.5;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .job-subtitle {
+            grid-area: subtitle;
+            font-size: var(--fs-4);
+            font-weight: 400;
+            line-height: 1.7;
+        }
+
+        .button {
+            grid-area: button;
+
+            &.hidden {
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+            }
+        }
+
+    }
+
+    .careers-empty {
+        p {
+            font-size: var(--fs-5);
+            line-height: 1.75;
+            font-weight: 400;
+            color: var(--grey);
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            font-size: var(--fs-7-4-5);
+            line-height: 1.26;
+            font-weight: 300;
+
+            @media (max-width: 480px) {
+                font-size: var(--fs-7-4);
+                line-height: 1.5;
+                word-wrap: anywhere;
+
+            }
+
+            strong {
+                font-weight: 700;
+            }
+        }
+
+        a {
+            color: var(--accent-clr);
+
+            &:hover {
+                color: var(--accent-clr-translucent);
+            }
+        }
+    }
+}
+
+// @import '../components/paginator';
+
+// Careers single page
+.single-careers {
+    .container {
+        padding-top: 2%;
+    }
+
+    section {
+        margin-bottom: var(--gap-5);
+
+        &.career-details {
+            .title {
+                margin-bottom: 0.1em;
+            }
+
+            .subtitle-bottom {
+                margin-block: var(--gap);
+            }
+
+            article {
+                margin-top: var(--gap-2);
+
+                ul {
+                    list-style: disc inside;
+
+                    li {
+                        margin-bottom: var(--gap);
+                    }
+
+                }
+
+            }
+        }
+
+        &.careers-form {
+            padding-block: var(--gap-5);
+        }
+
+    }
+}

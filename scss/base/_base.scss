@@ -1,0 +1,85 @@
+/*
+Theme Name: IF.BE Theme
+Theme URI: https://ifbe.space/
+Template: Divi
+Author: Rishi Talreja
+Author URI: https://rishitalreja.com
+Description: Smart. Flexible. Beautiful.
+Version: 2022-06-10.1654855106
+Updated: 2022-06-10 09:58:26
+
+*/
+
+:root {
+    --accent-clr: rgb(255, 84, 65);
+    --accent-clr-translucent: rgba(255, 84, 65, 0.5);
+    --grey: #808080;
+    --grey-translucent: rgba(128, 128, 128, 0.3);
+    --grey-translucent-2: rgba(128, 128, 128, 0.5);
+    --grey-translucent-03: rgba(128, 128, 128, 0.03);
+    --grey-2: #F7F7F7;
+    --grey-2-translucent: rgba(247, 247, 247, 0.75);
+    --grey-3: #CECECE;
+
+    --transition: transform 0.5s var(--easing-1);
+    --easing-1: cubic-bezier(.79, .14, .15, .86);
+    --easing-2: cubic-bezier(.68, -1.55, .27, 0.55);
+
+    --header-height: -124px;
+    --padding-container: 10vw;
+    --padding-container-top: calc(var(--gap-5) + 2em);
+
+    --fs-2: 0.625rem; // 10px
+    --fs-3: 0.75rem; // 12px
+    --fs-4: 0.875rem; // 14px
+    --fs-5: 1rem; // 16px
+    --fs-6: 1.125rem; // 18px
+    --fs-6-5: 1.375rem; // 22px
+    --fs-7: 1.5rem; // 24px
+    --fs-7-4: 1.625rem; // 26px
+    --fs-7-4-4: 1.75rem; // 28px
+    --fs-7-4-5: 1.875rem; // 30px
+    --fs-7-5: 2rem; // 32px
+    --fs-7-6: 2.215rem; // 34px
+    --fs-7-7: 2.5rem; // 40px
+    --fs-8: 3.375rem; // 54px
+    --fs-9: 6.6875rem; // 110px
+
+    --gap: 1em;
+    --gap-2: calc(var(--gap) * 2);
+    --gap-3: calc(var(--gap) * 3);
+    --gap-4: calc(var(--gap) * 4);
+    --gap-5: calc(var(--gap) * 5);
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.et_full_width_page {
+    .container {
+        width: 90%;
+        max-width: 1920px;
+        padding-top: var(--padding-container-top) !important;
+
+        @media (max-width: 980px) {
+            --padding-container-top: var(--gap-5);
+            // padding-top: var(--gap-5) !important;
+        }
+    }
+
+}
+
+a:hover {
+    color: var(--accent-clr);
+}
+
+/* Temporary */
+// .pending.menu-item > a::after {
+//     content: "pending";
+//     color: red;
+//     font-size: 0.6em;
+//     letter-spacing: 0.12em;
+//     text-transform: uppercase;
+//     padding-left: 0.5em;
+// }

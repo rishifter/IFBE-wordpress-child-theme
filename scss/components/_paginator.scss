@@ -1,0 +1,9 @@
+button.tangible-paginator-button {
+    cursor: pointer;
+    padding: var(--gap) var(--gap-2);
+
+    &.active {
+        background-color: var(--accent-clr);
+        border-color: var(--accent-clr);
+    }
+}

@@ -1,0 +1,81 @@
+.spaces-booking {
+    section {
+        min-height: auto !important;
+        padding: 0 0 5%;
+        font-weight: 400;
+        font-size: var(--fs-5);
+        line-height: 1.7;
+
+        &.title-container {
+            .title {
+                margin-bottom: 0;
+            }
+        }
+
+        &.dark {
+            padding: var(--gap-5) var(--padding-container);
+            // box-shadow: 0 0 0 100vw black;
+            // clip-path: inset(0 -100vw 0 0);
+            color: white;
+
+            // @media (max-width: 768px) {
+            //     width: 100vw;
+            //     margin-left: 50%;
+            //     transform: translateX(-51%);
+            //     padding: 10%;
+            // }
+
+            .content {
+                align-items: center;
+                justify-content: center;
+                gap: calc(var(--gap) * 5);
+
+                .right {
+                    @media (max-width: 768px) {
+                        padding-bottom: calc(var(--gap) * 2);
+                    }
+                }
+
+                img {
+                    @media (min-width:768px) {
+                        // width: 45%;
+                        flex-basis: 100%;
+                    }
+                }
+            }
+
+            .heading {
+                color: white;
+                font-weight: 700;
+                font-size: var(--fs-7-5);
+                margin-bottom: var(--gap);
+            }
+
+            .blurb {
+                padding-left: 0;
+
+                .title {
+                    color: white;
+                }
+
+                .subtitle {
+                    color: var(--grey);
+                }
+            }
+
+            .button.arrow {
+                color: white;
+                line-height: 1.5;
+
+                &:hover::after {
+                    content: url('data:image/svg+xml;utf8,<svg viewBox="0 0 35 16" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M34.0228 8.4239C34.4134 8.03338 34.4134 7.40021 34.0228 7.00969L27.6589 0.645729C27.2683 0.255205 26.6352 0.255205 26.2447 0.645729C25.8541 1.03625 25.8541 1.66942 26.2447 2.05994L31.9015 7.7168L26.2447 13.3737C25.8541 13.7642 25.8541 14.3973 26.2447 14.7879C26.6352 15.1784 27.2683 15.1784 27.6589 14.7879L34.0228 8.4239ZM0.863281 8.7168H33.3157V6.7168H0.863281V8.7168Z" fill="rgb(255, 84, 65)"/> </svg> ');
+                }
+
+                &::after {
+                    content: url('data:image/svg+xml;utf8,<svg viewBox="0 0 35 16" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M34.0228 8.4239C34.4134 8.03338 34.4134 7.40021 34.0228 7.00969L27.6589 0.645729C27.2683 0.255205 26.6352 0.255205 26.2447 0.645729C25.8541 1.03625 25.8541 1.66942 26.2447 2.05994L31.9015 7.7168L26.2447 13.3737C25.8541 13.7642 25.8541 14.3973 26.2447 14.7879C26.6352 15.1784 27.2683 15.1784 27.6589 14.7879L34.0228 8.4239ZM0.863281 8.7168H33.3157V6.7168H0.863281V8.7168Z" fill="white"/> </svg> ');
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,189 @@
+/* Hamburger */
+.hamburger-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    height: 3em;
+    cursor: pointer;
+
+    .label {
+        text-transform: uppercase;
+    }
+
+    .lines {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 1.75rem;
+        gap: 0.5rem;
+        overflow: hidden;
+
+        &::before,
+        &::after {
+            content: "";
+            background-color: black;
+            height: 3px;
+            width: 100%;
+            transition: var(--transition);
+        }
+
+        &::after {
+            // width: 1.15rem;
+            transform: translateX(-0.6rem);
+        }
+    }
+
+    &.open {
+        .lines::after {
+            transform: translateX(0.6rem);
+        }
+    }
+
+}
+
+/* Menu Section */
+#menu {
+    width: max-content;
+    max-width: 100vw;
+    transform: translateX(-120%);
+    transition: var(--transition);
+
+    position: fixed !important;
+    inset: 0;
+    min-height: 100vh;
+    height: 100vh;
+    overflow-y: scroll;
+    z-index: 9999 !important;
+
+    /* Menu popup */
+    .menu-wrapper {
+        // --gap: 1rem;
+        --gap-2: calc(var(--gap) * 2);
+        --gap-3: calc(var(--gap-2) * 2);
+        text-transform: uppercase;
+        padding: var(--gap);
+
+        @media (max-width:480px) {
+            --gap: 0.3rem;
+        }
+
+        ul {
+            // font-size: clamp(var(--fs-7), 3.4vw, var(--fs-8)); //to adjust gap dynamically
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: var(--gap-3);
+            gap: Min(6vh, var(--gap-3));
+            padding: 0 calc(var(--gap-5) + 2em);
+            min-height: 95vh;
+
+            @media (max-width:480px) {
+                gap: 2em;
+                padding: var(--gap-4) 2em;
+            }
+
+            h2 a {
+                // padding-bottom: 0.2em;
+                font-size: clamp(var(--fs-7), 3vw, var(--fs-8));
+                font-weight: 200;
+                letter-spacing: 4px;
+                color: var(--accent-clr);
+
+                @media (max-width:480px) {
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        .sub-menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--gap);
+
+            li,
+            a {
+                font-size: 0.75rem;
+                font-weight: 700;
+                letter-spacing: 2px;
+                color: white;
+            }
+
+            li:not(:last-of-type)::after {
+                content: "|";
+                padding-left: var(--gap);
+            }
+        }
+
+        .btn-close {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 2em;
+            margin-left: auto;
+            width: max-content;
+            position: absolute;
+            right: var(--gap);
+            z-index: 1;
+
+            &::before {
+                content: '\4d';
+                font-family: "ETmodules";
+                font-size: 3em;
+                line-height: 1em;
+                color: white;
+                cursor: pointer;
+            }
+        }
+
+    }
+}
+
+#menu.open {
+    transform: translateX(0);
+}
+
+/* Dark Mode */
+// .dark {
+//     .hamburger-menu {
+//         .label {
+//             color: white;
+//         }
+
+//         .lines::before,
+//         .lines::after {
+//             background: white;
+//         }
+//     }
+
+//     .logo svg path {
+//         fill: white;
+//     }
+// }
+
+.logo {
+    img {
+        @media (max-width:480px) {
+            height: 50px;
+        }
+    }
+}
+
+header {
+    .et_builder_inner_content {
+        z-index: 9999;
+    }
+
+    .header-section {
+        box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.05);
+    }
+}
+
+@import 'header_transparent';
+@import 'header_disabled';

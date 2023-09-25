@@ -1,0 +1,81 @@
+.home,
+.transparent-header {
+
+    /* Fix page for transparent header */
+    #et-main-area {
+        position: relative;
+        top: var(--header-height);
+    }
+
+    // #main-content {
+    //     position: relative;
+    //     top: var(--header-height);
+    // }
+
+    #page-container {
+        overflow: hidden;
+    }
+
+    #et-boc {
+        margin-bottom: var(--header-height);
+        overflow: hidden;
+    }
+
+    /* Fix for front end bulder */
+    &.et-fb #et-main-area {
+        top: 0;
+    }
+
+    .et_pb_section_0_tb_header {
+        background: transparent;
+    }
+
+    /* Invert colours for transparent header*/
+    .hamburger-menu {
+        .label {
+            color: white;
+        }
+
+        .lines::before,
+        .lines::after {
+            background: white;
+        }
+    }
+
+    .logo img {
+        // fill: white;
+        filter: invert(1);
+    }
+
+    header {
+        .header-section {
+            box-shadow: none;
+        }
+    }
+}
+
+.transparent-header {
+    .et_pb_section_0_tb_header {
+        background: black;
+    }
+
+    // #et-main-area {
+    //     position: relative;
+    //     top: var(--header-height);
+    // }
+
+    // .container {
+    //     margin-top: calc(var(--gap-5) - 2em) !important;
+    // }
+}
+
+.home {
+    // #page-container {
+    //     overflow: hidden;
+    // }
+
+    // #et-boc {
+    //     margin-bottom: var(--header-height);
+    //     overflow: hidden;
+    // }
+}

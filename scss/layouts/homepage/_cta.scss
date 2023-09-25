@@ -1,0 +1,30 @@
+.home-cta {
+    background-color: var(--accent-clr);
+    padding-block: 10rem !important;
+
+    @media (max-width: 480px) {
+        padding-block: 4rem !important;
+    }
+
+    .cta {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--gap-2);
+
+        .text {
+            font-size: var(--fs-7);
+            line-height: 2.2;
+            font-weight: 200;
+            text-align: center;
+            color: white;
+            margin-bottom: var(--gap);
+
+            @media (max-width:480px) {
+                font-size: var(--fs-5);
+            }
+        }
+
+    }
+}
